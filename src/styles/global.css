@@ -9,7 +9,7 @@
   --blue: #4b8dff;
   --green: #79d98b;
   --purple: #a78bfa;
-  --muted: #5f5f5f;
+  --muted: #4d4d4d;
   --border: 3px solid var(--ink);
   --shadow: 8px 8px 0 var(--ink);
   --shadow-small: 4px 4px 0 var(--ink);
@@ -36,8 +36,9 @@ a {
   color: inherit;
 }
 :focus-visible {
-  outline: 4px solid var(--blue);
+  outline: 4px solid var(--ink);
   outline-offset: 4px;
+  box-shadow: 0 0 0 3px var(--paper);
 }
 .container {
   width: min(calc(100% - 2rem), var(--max-width));
@@ -752,6 +753,14 @@ h3 {
   .hero-main {
     padding: 1.25rem;
   }
+  .toon-hero-grid .hero-main,
+  .toon-hero-grid .hero-status,
+  .recruiter-grid .mini-card {
+    min-height: auto;
+  }
+  .toon-hero-grid .hero-status {
+    padding: 1.25rem;
+  }
   .hero-side,
   .skill-grid,
   .project-grid,
@@ -765,7 +774,7 @@ h3 {
     font-size: 2rem;
   }
   .section {
-    padding: 2.4rem 0;
+    padding: 1.7rem 0;
   }
   .section-heading,
   .catalog-intro,
@@ -1508,6 +1517,32 @@ h3 {
 .expertise-section .section-heading h2 {
   margin-top: 1rem;
   max-width: 650px;
+}
+
+/* Keep the mobile landing page compact without reducing content or tap targets. */
+@media (max-width: 560px) {
+  .hero {
+    padding: 1.35rem 0 0.9rem;
+  }
+  .toon-hero-grid {
+    gap: 0.8rem;
+  }
+  .toon-hero-grid .hero-main,
+  .toon-hero-grid .hero-status,
+  .recruiter-grid .mini-card {
+    min-height: auto;
+  }
+  .toon-hero-grid .hero-status,
+  .recruiter-grid .mini-card {
+    padding: 1.1rem;
+  }
+  .mini-grid {
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+  }
+  .recruiter-grid .mini-card strong {
+    font-size: 1.85rem;
+  }
 }
 .expertise-grid {
   display: grid;

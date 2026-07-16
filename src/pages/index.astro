@@ -71,7 +71,7 @@ const posts = await getPublishedPosts();
 
   <section class="section container credentials-section">
     <div class="section-heading"><div><p class="eyebrow">RECOGNITION</p><h2>Certificates and Awards</h2></div><p>Selected technical credentials and academic recognition.</p></div>
-    <div class="credentials-grid">{credentials.map((credential) => <BrutalCard tone={credential.tone}><p class="status-title">{credential.kind}</p><h3>{credential.title}</h3><p>{credential.detail}</p><a class="credential-proof" href={credential.proofHref}>Proof <span aria-hidden="true">↗</span></a></BrutalCard>)}</div>
+    <div class="credentials-grid">{credentials.map((credential) => <BrutalCard tone={credential.tone}><p class="status-title">{credential.kind}</p><h3>{credential.title}</h3><p>{credential.detail}</p><a class="credential-proof" href={credential.proofHref}>View credential <span aria-hidden="true">↗</span></a></BrutalCard>)}</div>
   </section>
 
   <section class="section container">
