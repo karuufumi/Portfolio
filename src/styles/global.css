@@ -93,9 +93,9 @@ h3 {
 }
 .site-header {
   position: sticky;
-  top: 0.75rem;
+  top: 0.5rem;
   z-index: 20;
-  padding-top: 0.75rem;
+  padding-top: 0.5rem;
 }
 .navbar {
   min-height: 66px;
@@ -1154,21 +1154,32 @@ h3 {
 
 /* Recruiter-first refinement: reduce decoration, foreground scope and evidence. */
 .navbar {
-  min-height: 84px;
-  padding: 0.8rem 1.15rem;
+  min-height: 68px;
+  padding: 0.5rem 0.9rem;
+  border-radius: 16px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.logo {
+  font-size: 1.4rem;
 }
 .nav-links {
-  gap: 1.25rem;
+  gap: 0.7rem;
 }
 .nav-links a {
-  padding: 0.72rem 0.9rem;
-  font-size: 1.12rem;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  font-size: 1rem;
 }
 .nav-cta {
-  padding: 0.83rem 1.25rem;
-  font-size: 0.85rem;
-  border-radius: 15px;
-  box-shadow: 4px 4px 0 var(--ink);
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--ink);
 }
 .toon-hero-grid {
   grid-template-columns: 1.3fr 0.85fr;
