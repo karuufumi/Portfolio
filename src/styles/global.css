@@ -1495,6 +1495,8 @@ h3 {
   gap: 1rem;
 }
 .credentials-grid .brutal-card {
+  display: flex;
+  flex-direction: column;
   min-height: 205px;
   padding: 1.4rem;
 }
@@ -1502,10 +1504,20 @@ h3 {
   margin: 1.4rem 0 0.7rem;
   font-size: 1.45rem;
 }
-.credentials-grid p:last-child {
+.credentials-grid .brutal-card > p:not(.status-title) {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
+}
+.credential-proof {
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  text-transform: uppercase;
 }
 @media (max-width: 800px) {
   .expertise-grid,
