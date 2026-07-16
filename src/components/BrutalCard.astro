@@ -1,0 +1,5 @@
+---
+interface Props { tone?: string; interactive?: boolean; class?: string; }
+const { tone = '', interactive = false, class: className = '' } = Astro.props;
+---
+<section class={`brutal-card ${tone} ${interactive ? 'interactive' : ''} ${className}`}><slot /></section>

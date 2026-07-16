@@ -1,0 +1,12 @@
+---
+import Tag from './Tag.astro';
+import MangaLabel from './MangaLabel.astro';
+import type { Project } from '../data/site';
+const { project } = Astro.props as { project: Project };
+---
+<article class={`project-card ${project.tone}`}>
+  <div class="card-top"><MangaLabel tone={project.tone}>CASE FILE {project.number}</MangaLabel><span class="status-dot">● {project.status}</span></div>
+  <h3>{project.title}</h3><p>{project.description}</p>
+  <div class="tag-list">{project.tags.map((tag) => <Tag>{tag}</Tag>)}</div>
+  <a class="case-link" href={`/projects/${project.slug}`}>READ CASE FILE <span aria-hidden="true">→</span></a>
+</article>

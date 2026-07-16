@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import { notes } from '../../data/site';
+---
+<BaseLayout title="Notes — Karuu"><section class="page-hero container"><p class="eyebrow">FIELD RECORDS / 2026</p><h1>Notes</h1><p>Engineering notes, thesis logs, and things I am learning.</p></section><section class="section container"><div class="notes-grid">{notes.map(note => <a class="note-card" href={`/notes/${note.slug}`}><span class="note-meta">{note.type} · {note.date}</span><h3>{note.title}</h3><p>{note.excerpt}</p><p style="margin-top:1rem;font-weight:800;font-size:.75rem">READ NOTE →</p></a>)}</div></section></BaseLayout>

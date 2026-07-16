@@ -1,0 +1,13 @@
+---
+const path = Astro.url.pathname;
+const links = [['/about', 'About'], ['/projects', 'Projects'], ['/notes', 'Notes'], ['/contact', 'Contact']];
+---
+<header class="site-header container">
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="logo" href="/" aria-label="Karuu home"><span aria-hidden="true">▣</span> KARUU</a>
+    <div class="nav-links">
+      {links.map(([href, label]) => <a href={href} class={path === href || path.startsWith(`${href}/`) ? 'active' : ''}>{label}</a>)}
+    </div>
+    <a class="nav-cta" href="/contact">Start a project!</a>
+  </nav>
+</header>

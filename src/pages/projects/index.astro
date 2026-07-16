@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import ProjectCard from '../../components/ProjectCard.astro'; import { projects } from '../../data/site';
+---
+<BaseLayout title="Project Catalog — Karuu"><section class="page-hero container"><p class="eyebrow">ARCHIVE / ACTIVE</p><h1>Project Catalog</h1><p>Selected builds, system experiments, and engineering case files.</p></section><section class="section container"><div class="project-grid">{projects.map(project => <ProjectCard project={project} />)}</div></section></BaseLayout>
