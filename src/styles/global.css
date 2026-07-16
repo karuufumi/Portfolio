@@ -1064,11 +1064,11 @@ h3 {
   padding: 0.8rem 1.15rem;
 }
 .nav-links {
-  gap: 0.8rem;
+  gap: 1.25rem;
 }
 .nav-links a {
-  padding: 0.66rem 0.78rem;
-  font-size: 1rem;
+  padding: 0.72rem 0.9rem;
+  font-size: 1.12rem;
 }
 .nav-cta {
   padding: 0.83rem 1.25rem;
