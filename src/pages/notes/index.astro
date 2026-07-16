@@ -1,4 +1,12 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import { notes } from '../../data/site';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogList from '../../components/BlogList.astro';
+import BlogPagination from '../../components/BlogPagination.astro';
+import { notes } from '../../data/site';
+
+const pageSize = 6;
+const currentPage = 1;
+const totalPages = Math.max(1, Math.ceil(notes.length / pageSize));
+const pageNotes = notes.slice(0, pageSize);
 ---
-<BaseLayout title="Blog — Karuu"><section class="page-hero container"><h1>Blog</h1><p>Short writing on backend systems, cloud delivery, security research, and project work.</p></section><section class="section container blog-list">{notes.map((note, index) => <a class="blog-entry" href={`/notes/${note.slug}`}><span class="blog-number">0{index + 1}</span><div><span class="note-meta">{note.date}</span><h2>{note.title}</h2><p>{note.excerpt}</p></div><span class="blog-arrow" aria-hidden="true">→</span></a>)}</section></BaseLayout>
+<BaseLayout title="Blog — Karuu"><section class="page-hero container"><h1>Blog</h1><p>Short writing on backend systems, cloud delivery, security research, and project work.</p></section><BlogList notes={pageNotes} startIndex={0} /><BlogPagination currentPage={currentPage} totalPages={totalPages} /></BaseLayout>

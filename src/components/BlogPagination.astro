@@ -1,0 +1,57 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+}
+
+const { currentPage, totalPages } = Astro.props;
+const pageLink = (page: number) => page === 1 ? '/notes' : `/notes/page/${page}`;
+const visiblePages = Array.from(
+  new Set([
+    1,
+    totalPages,
+    currentPage - 1,
+    currentPage,
+    currentPage + 1,
+    ...(currentPage <= 3 ? [2, 3, 4] : []),
+    ...(currentPage >= totalPages - 2 ? [totalPages - 3, totalPages - 2, totalPages - 1] : []),
+  ])
+).filter((page) => page >= 1 && page <= totalPages).sort((a, b) => a - b);
+---
+
+<nav class="blog-pagination container" aria-label="Blog pagination">
+  <p class="pagination-status">Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong></p>
+  <div class="pagination-controls">
+    {currentPage > 1 ? (
+      <a class="pagination-control" href={pageLink(currentPage - 1)} rel="prev">← Previous</a>
+    ) : (
+      <span class="pagination-control is-disabled" aria-disabled="true">← Previous</span>
+    )}
+
+    <ol class="page-numbers">
+      {visiblePages.map((page, index) => (
+        <Fragment>
+          {index > 0 && page - visiblePages[index - 1] > 1 && <li class="pagination-ellipsis" aria-hidden="true">…</li>}
+          <li>
+            {page === currentPage ? (
+              <span class="page-number is-current" aria-current="page">{page}</span>
+            ) : (
+              <a class="page-number" href={pageLink(page)} aria-label={`Go to page ${page}`}>{page}</a>
+            )}
+          </li>
+        </Fragment>
+      ))}
+    </ol>
+
+    {currentPage < totalPages ? (
+      <a class="pagination-control" href={pageLink(currentPage + 1)} rel="next">Next →</a>
+    ) : (
+      <span class="pagination-control is-disabled" aria-disabled="true">Next →</span>
+    )}
+  </div>
+  {currentPage < totalPages ? (
+    <a class="pagination-last" href={pageLink(totalPages)}>Last page <span aria-hidden="true">→</span></a>
+  ) : (
+    <span class="pagination-last is-disabled" aria-disabled="true">Last page <span aria-hidden="true">→</span></span>
+  )}
+</nav>

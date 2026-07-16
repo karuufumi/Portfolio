@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BlogList from '../../../components/BlogList.astro';
+import BlogPagination from '../../../components/BlogPagination.astro';
+import { notes } from '../../../data/site';
+
+export function getStaticPaths() {
+  const pageSize = 6;
+  const totalPages = Math.ceil(notes.length / pageSize);
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const currentPage = index + 2;
+    const startIndex = (currentPage - 1) * pageSize;
+
+    return {
+      params: { page: String(currentPage) },
+      props: {
+        currentPage,
+        totalPages,
+        startIndex,
+        pageNotes: notes.slice(startIndex, startIndex + pageSize),
+      },
+    };
+  });
+}
+
+const { currentPage, totalPages, startIndex, pageNotes } = Astro.props;
+---
+
+<BaseLayout title={`Blog — Page ${currentPage} — Karuu`}><section class="page-hero container"><h1>Blog</h1><p>Short writing on backend systems, cloud delivery, security research, and project work.</p></section><BlogList notes={pageNotes} startIndex={startIndex} /><BlogPagination currentPage={currentPage} totalPages={totalPages} /></BaseLayout>

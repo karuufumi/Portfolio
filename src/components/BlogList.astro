@@ -1,0 +1,24 @@
+---
+import type { Note } from '../data/site';
+
+interface Props {
+  notes: Note[];
+  startIndex: number;
+}
+
+const { notes, startIndex } = Astro.props;
+---
+
+<section class="section container blog-list">
+  {notes.map((note, index) => (
+    <a class="blog-entry" href={`/notes/${note.slug}`}>
+      <span class="blog-number">{String(startIndex + index + 1).padStart(2, '0')}</span>
+      <div>
+        <span class="note-meta">{note.date}</span>
+        <h2>{note.title}</h2>
+        <p>{note.excerpt}</p>
+      </div>
+      <span class="blog-arrow" aria-hidden="true">→</span>
+    </a>
+  ))}
+</section>

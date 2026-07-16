@@ -46,7 +46,14 @@ export const projects: Project[] = [
   }
 ];
 
-export const notes = [
+export type Note = {
+  slug: string;
+  date: string;
+  title: string;
+  excerpt: string;
+};
+
+export const notes: Note[] = [
   { slug: 'manga-brutalist-portfolio', date: 'JUL 2026', title: 'Designing a Manga-Brutalist Portfolio', excerpt: 'Notes on building a portfolio visual system with paper, ink, and useful constraints.' },
   { slug: 'system-projects-thesis-work', date: 'JUN 2026', title: 'Why I Prefer System Projects for Thesis Work', excerpt: 'The appeal of projects where architecture, behavior, and evaluation are all visible.' },
   { slug: 'cloudflare-pages-notes', date: 'MAY 2026', title: 'Cloudflare Pages Deployment Notes', excerpt: 'A short, practical record of shipping static work with a small operational surface.' },
