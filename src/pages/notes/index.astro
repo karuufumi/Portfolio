@@ -2,9 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogList from '../../components/BlogList.astro';
 import BlogPagination from '../../components/BlogPagination.astro';
-import { notes } from '../../data/site';
+import { BLOG_PAGE_SIZE, notes } from '../../data/blog';
 
-const pageSize = 5;
+const pageSize = BLOG_PAGE_SIZE;
 const currentPage = 1;
 const totalPages = Math.max(1, Math.ceil(notes.length / pageSize));
 const pageNotes = notes.slice(0, pageSize);

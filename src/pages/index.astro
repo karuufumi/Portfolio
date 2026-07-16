@@ -1,15 +1,83 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'; import BrutalCard from '../components/BrutalCard.astro'; import Button from '../components/Button.astro'; import MangaLabel from '../components/MangaLabel.astro'; import ProjectCard from '../components/ProjectCard.astro'; import { projects, notes } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrutalCard from '../components/BrutalCard.astro';
+import Button from '../components/Button.astro';
+import MangaLabel from '../components/MangaLabel.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { credentials } from '../data/credentials';
+import { notes } from '../data/blog';
+import { profile } from '../data/profile';
+import { projects } from '../data/projects';
 ---
+
 <BaseLayout>
-  <section class="hero container"><div class="hero-grid toon-hero-grid">
-    <BrutalCard class="hero-main"><MangaLabel tone="green">● OPEN TO INTERNSHIPS &amp; COLLABORATION</MangaLabel><h1>Nguyễn Tiến Khang</h1><p class="hero-location">⌖ An Nhon, Ho Chi Minh City, Vietnam</p><p class="hero-role">Computer Science undergraduate · Backend, cloud, and security-focused software</p><p class="hero-copy">I build practical systems with clear architecture, measurable behavior, and useful interfaces. My current interests are backend services, cloud workflows, DevOps, container sandboxing, and observability.</p><div class="hero-buttons"><Button href="/projects">View projects</Button><Button href="/contact" variant="secondary">Contact me</Button><Button href="/MyCV_new.pdf" variant="blue">My CV</Button></div></BrutalCard>
-    <aside class="hero-side"><BrutalCard tone="blue" class="hero-status"><p class="status-title">CURRENT WORK <span aria-hidden="true">⌘</span></p><p class="status-big">Container<br/>Security Sandbox<small>A Go and Docker project for testing container behavior under restricted runtime policies.</small></p><a class="case-link" href="/projects/container-security-sandbox">VIEW PROJECT →</a></BrutalCard><BrutalCard tone="yellow" class="hero-status"><p class="status-title">CORE SKILLS <span aria-hidden="true">⚡</span></p><p class="status-big">Backend, Cloud<br/>&amp; DevOps<small>Go, Java, TypeScript, Docker, PostgreSQL, CI/CD, and observability.</small></p><a class="case-link" href="#expertise">READ ABOUT MY EXPERTISE →</a></BrutalCard></aside>
-  </div><div class="mini-grid recruiter-grid"><BrutalCard tone="green" class="mini-card"><p class="status-title">WHAT I BUILD</p><strong>APIs &amp;<br/>platforms</strong><p>Services with clear contracts and useful operational behavior.</p></BrutalCard><BrutalCard tone="purple" class="mini-card"><p class="status-title">HOW I WORK</p><strong>Measure,<br/>then improve.</strong><p>Start with constraints, verify behavior, and document the decisions.</p></BrutalCard><BrutalCard class="mini-card availability-card"><p class="status-title">AVAILABILITY</p><strong>Open to<br/>internships</strong><p>And entry-level engineering opportunities.</p></BrutalCard></div></section>
-  <section class="section container expertise-section" id="expertise"><div class="section-heading"><div><MangaLabel tone="yellow">ABOUT KHANG</MangaLabel><h2>Focused on systems that are easier to operate.</h2></div><p>I am interested in software that has clear boundaries, can be tested under realistic conditions, and gives developers useful signals when something changes.</p></div><div class="expertise-grid"><BrutalCard><h3>Backend systems</h3><p>Building APIs, service boundaries, and event-driven workflows with Java, Go, PostgreSQL, and message-based patterns.</p></BrutalCard><BrutalCard tone="blue"><h3>Cloud &amp; delivery</h3><p>Working with Docker, CI/CD, deployment workflows, and observability to make software easier to run and maintain.</p></BrutalCard><BrutalCard tone="yellow"><h3>Security-focused work</h3><p>Exploring container sandboxing, runtime policies, restricted environments, and security-minded system design.</p></BrutalCard></div></section>
-  <section class="section container showcase-section"><div class="section-heading centered-heading"><div><MangaLabel tone="purple">SELECTED PROJECTS</MangaLabel><h2>System Builds</h2><p>Case studies that show the problem, implementation, and technical decisions.</p></div></div><div class="project-grid showcase-grid">{projects.slice(0,2).map((project) => <ProjectCard project={project} />)}</div><p class="center-action"><Button href="/projects" variant="plain">Browse all projects</Button></p></section>
-  <section class="section container process-section"><div class="section-heading centered-heading"><div><MangaLabel tone="green">HOW I WORK</MangaLabel><h2>My Engineering Storyboard</h2></div></div><div class="process-list"><article><b>1</b><div><h3>Discover</h3><p>Clarify the system boundary, risk, outcomes, and constraints before selecting a stack.</p></div><span>⌕</span></article><article><b>2</b><div><h3>Model</h3><p>Map the data, service contracts, failure paths, and behavior that needs to be observable.</p></div><span>◇</span></article><article><b>3</b><div><h3>Build</h3><p>Implement focused components, test critical paths, and keep the developer workflow simple.</p></div><span>⌘</span></article><article><b>4</b><div><h3>Ship</h3><p>Document decisions, deploy deliberately, and leave the system easier to operate than before.</p></div><span>↗</span></article></div></section>
-  <section class="section container credentials-section"><div class="section-heading"><div><p class="eyebrow">RECOGNITION</p><h2>Certificates and Awards</h2></div><p>Selected technical credentials and academic recognition.</p></div><div class="credentials-grid"><BrutalCard tone="blue"><p class="status-title">CERTIFICATION</p><h3>AWS Certified Solutions Architect – Associate</h3><p>AWS · July 2026</p><a class="credential-proof" href="#">Proof <span aria-hidden="true">↗</span></a></BrutalCard><BrutalCard tone="yellow"><p class="status-title">CERTIFICATION</p><h3>IELTS 7.0</h3><p>IDP Vietnam · May 2022</p><a class="credential-proof" href="#">Proof <span aria-hidden="true">↗</span></a></BrutalCard><BrutalCard tone="green"><p class="status-title">AWARD</p><h3>OISP Scholarship</h3><p>Semester 242 · VNU-HCM University of Technology</p><a class="credential-proof" href="#">Proof <span aria-hidden="true">↗</span></a></BrutalCard></div></section>
-  <section class="section container"><div class="section-heading"><div><p class="eyebrow">FROM THE BLOG</p><h2>Blog Posts</h2></div><p>The two most recent posts on systems, cloud, research, and applied engineering work.</p></div><div class="notes-grid">{notes.slice(0,2).map(note => <a class="note-card" href={`/notes/${note.slug}`}><span class="note-meta">{note.date}</span><h3>{note.title}</h3><p>{note.excerpt}</p></a>)}</div></section>
-  <section class="section container"><BrutalCard tone="pink" class="contact-cta"><div><p class="eyebrow">CONTACT</p><h2>Want to build or discuss something technical?</h2></div><div><p>Send a message if you want to talk about backend systems, cloud platforms, security testing, or applied software engineering.</p><p style="margin-top:1.25rem"><Button href="/contact" variant="plain">Contact Karuu</Button></p></div></BrutalCard></section>
+  <section class="hero container">
+    <div class="hero-grid toon-hero-grid">
+      <BrutalCard class="hero-main">
+        <MangaLabel tone="green">● OPEN TO INTERNSHIPS &amp; COLLABORATION</MangaLabel>
+        <h1>{profile.name}</h1>
+        <p class="hero-location">⌖ {profile.location}</p>
+        <p class="hero-role">Computer Science undergraduate · Backend, cloud, and security-focused software</p>
+        <p class="hero-copy">I build practical systems with clear architecture, measurable behavior, and useful interfaces. My current interests are backend services, cloud workflows, DevOps, container sandboxing, and observability.</p>
+        <div class="hero-buttons">
+          <Button href="/projects">View projects</Button>
+          <Button href="/contact" variant="secondary">Contact me</Button>
+          <Button href="/MyCV_new.pdf" variant="blue">My CV</Button>
+        </div>
+      </BrutalCard>
+
+      <aside class="hero-side">
+        <BrutalCard tone="blue" class="hero-status">
+          <p class="status-title">CURRENT WORK <span aria-hidden="true">⌘</span></p>
+          <p class="status-big">Container<br/>Security Sandbox<small>A Go and Docker project for testing container behavior under restricted runtime policies.</small></p>
+          <a class="case-link" href="/projects/container-security-sandbox">VIEW PROJECT →</a>
+        </BrutalCard>
+        <BrutalCard tone="yellow" class="hero-status">
+          <p class="status-title">CORE SKILLS <span aria-hidden="true">⚡</span></p>
+          <p class="status-big">Backend, Cloud<br/>&amp; DevOps<small>Go, Java, TypeScript, Docker, PostgreSQL, CI/CD, and observability.</small></p>
+          <a class="case-link" href="#expertise">READ ABOUT MY EXPERTISE →</a>
+        </BrutalCard>
+      </aside>
+    </div>
+
+    <div class="mini-grid recruiter-grid">
+      <BrutalCard tone="green" class="mini-card"><p class="status-title">WHAT I BUILD</p><strong>APIs &amp;<br/>platforms</strong><p>Services with clear contracts and useful operational behavior.</p></BrutalCard>
+      <BrutalCard tone="purple" class="mini-card"><p class="status-title">HOW I WORK</p><strong>Measure,<br/>then improve.</strong><p>Start with constraints, verify behavior, and document the decisions.</p></BrutalCard>
+      <BrutalCard class="mini-card availability-card"><p class="status-title">AVAILABILITY</p><strong>Open to<br/>internships</strong><p>And entry-level engineering opportunities.</p></BrutalCard>
+    </div>
+  </section>
+
+  <section class="section container expertise-section" id="expertise">
+    <div class="section-heading"><div><MangaLabel tone="yellow">ABOUT KHANG</MangaLabel><h2>Focused on systems that are easier to operate.</h2></div><p>I am interested in software that has clear boundaries, can be tested under realistic conditions, and gives developers useful signals when something changes.</p></div>
+    <div class="expertise-grid">
+      <BrutalCard><h3>Backend systems</h3><p>Building APIs, service boundaries, and event-driven workflows with Java, Go, PostgreSQL, and message-based patterns.</p></BrutalCard>
+      <BrutalCard tone="blue"><h3>Cloud &amp; delivery</h3><p>Working with Docker, CI/CD, deployment workflows, and observability to make software easier to run and maintain.</p></BrutalCard>
+      <BrutalCard tone="yellow"><h3>Security-focused work</h3><p>Exploring container sandboxing, runtime policies, restricted environments, and security-minded system design.</p></BrutalCard>
+    </div>
+  </section>
+
+  <section class="section container showcase-section">
+    <div class="section-heading centered-heading"><div><MangaLabel tone="purple">SELECTED PROJECTS</MangaLabel><h2>System Builds</h2><p>Case studies that show the problem, implementation, and technical decisions.</p></div></div>
+    <div class="project-grid showcase-grid">{projects.slice(0, 2).map((project) => <ProjectCard project={project} />)}</div>
+    <p class="center-action"><Button href="/projects" variant="plain">Browse all projects</Button></p>
+  </section>
+
+  <section class="section container process-section">
+    <div class="section-heading centered-heading"><div><MangaLabel tone="green">HOW I WORK</MangaLabel><h2>My Engineering Storyboard</h2></div></div>
+    <div class="process-list"><article><b>1</b><div><h3>Discover</h3><p>Clarify the system boundary, risk, outcomes, and constraints before selecting a stack.</p></div><span>⌕</span></article><article><b>2</b><div><h3>Model</h3><p>Map the data, service contracts, failure paths, and behavior that needs to be observable.</p></div><span>◇</span></article><article><b>3</b><div><h3>Build</h3><p>Implement focused components, test critical paths, and keep the developer workflow simple.</p></div><span>⌘</span></article><article><b>4</b><div><h3>Ship</h3><p>Document decisions, deploy deliberately, and leave the system easier to operate than before.</p></div><span>↗</span></article></div>
+  </section>
+
+  <section class="section container credentials-section">
+    <div class="section-heading"><div><p class="eyebrow">RECOGNITION</p><h2>Certificates and Awards</h2></div><p>Selected technical credentials and academic recognition.</p></div>
+    <div class="credentials-grid">{credentials.map((credential) => <BrutalCard tone={credential.tone}><p class="status-title">{credential.kind}</p><h3>{credential.title}</h3><p>{credential.detail}</p><a class="credential-proof" href={credential.proofHref}>Proof <span aria-hidden="true">↗</span></a></BrutalCard>)}</div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading"><div><p class="eyebrow">FROM THE BLOG</p><h2>Blog Posts</h2></div><p>The two most recent posts on systems, cloud, research, and applied engineering work.</p></div>
+    <div class="notes-grid">{notes.slice(0, 2).map((note) => <a class="note-card" href={`/notes/${note.slug}`}><span class="note-meta">{note.date}</span><h3>{note.title}</h3><p>{note.excerpt}</p></a>)}</div>
+  </section>
+
+  <section class="section container">
+    <BrutalCard tone="pink" class="contact-cta"><div><p class="eyebrow">CONTACT</p><h2>Want to build or discuss something technical?</h2></div><div><p>Send a message if you want to talk about backend systems, cloud platforms, security testing, or applied software engineering.</p><p style="margin-top:1.25rem"><Button href="/contact" variant="plain">Contact Karuu</Button></p></div></BrutalCard>
+  </section>
 </BaseLayout>

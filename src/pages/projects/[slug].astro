@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import BrutalCard from '../../components/BrutalCard.astro'; import MangaLabel from '../../components/MangaLabel.astro'; import BrowserMockup from '../../components/BrowserMockup.astro'; import Tag from '../../components/Tag.astro'; import { projects } from '../../data/site';
+import BaseLayout from '../../layouts/BaseLayout.astro'; import BrutalCard from '../../components/BrutalCard.astro'; import MangaLabel from '../../components/MangaLabel.astro'; import BrowserMockup from '../../components/BrowserMockup.astro'; import Tag from '../../components/Tag.astro'; import { projects } from '../../data/projects';
 export function getStaticPaths() { return projects.map(project => ({ params: { slug: project.slug }, props: { project } })); }
 const { project } = Astro.props;
 ---

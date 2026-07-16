@@ -1,7 +1,7 @@
 ---
 import Tag from './Tag.astro';
 import MangaLabel from './MangaLabel.astro';
-import type { Project } from '../data/site';
+import type { Project } from '../data/projects';
 const { project } = Astro.props as { project: Project };
 ---
 <article class={`project-card ${project.tone}`}>

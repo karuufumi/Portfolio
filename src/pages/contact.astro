@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BrutalCard from '../components/BrutalCard.astro';
 import Button from '../components/Button.astro';
+import { profile } from '../data/profile';
 ---
 
 <BaseLayout title="Contact — Karuu">
@@ -15,25 +16,25 @@ import Button from '../components/Button.astro';
     <BrutalCard tone="pink" class="contact-card">
       <div class="contact-summary">
         <p class="eyebrow">DIRECT CONTACT</p>
-        <h2>Nguyễn Tiến Khang</h2>
+        <h2>{profile.name}</h2>
         <p>The quickest way to reach me is by phone. You can also send an email using the address below.</p>
       </div>
 
       <dl class="contact-methods">
         <div>
           <dt>Phone</dt>
-          <dd><a href="tel:+84903049939">0903 049 939</a></dd>
+          <dd><a href={profile.phoneHref}>{profile.phoneDisplay}</a></dd>
         </div>
         <div>
           <dt>Email</dt>
-          <dd><a class="email-link" data-email="a2hhbmd0aWVuMjRAZ21haWwuY29t" aria-label="Email Nguyễn Tiến Khang">khangtien24 [at] gmail [dot] com</a></dd>
+          <dd><a class="email-link" data-email={profile.emailEncoded} aria-label={`Email ${profile.name}`}>{profile.emailDisplay}</a></dd>
         </div>
       </dl>
 
       <div class="contact-resources">
         <Button href="/MyCV_new.pdf" variant="blue">My CV</Button>
-        <a class="button plain" href="https://github.com/karuufumi" target="_blank" rel="noreferrer"><img class="social-icon" src="/github.svg" alt="" aria-hidden="true"/>GitHub <span aria-hidden="true">↗</span></a>
-        <a class="button plain" href="https://www.linkedin.com/in/tienkhangnguyen" target="_blank" rel="noreferrer"><img class="social-icon" src="/social-media-computer-icons-linkedin-logo-social-media.jpg" alt="" aria-hidden="true"/>LinkedIn <span aria-hidden="true">↗</span></a>
+        <a class="button plain" href={profile.githubUrl} target="_blank" rel="noreferrer"><img class="social-icon" src="/github.svg" alt="" aria-hidden="true"/>GitHub <span aria-hidden="true">↗</span></a>
+        <a class="button plain" href={profile.linkedinUrl} target="_blank" rel="noreferrer"><img class="social-icon" src="/social-media-computer-icons-linkedin-logo-social-media.jpg" alt="" aria-hidden="true"/>LinkedIn <span aria-hidden="true">↗</span></a>
       </div>
     </BrutalCard>
   </section>
