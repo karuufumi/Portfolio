@@ -454,6 +454,54 @@ h3 {
   margin: 0;
   font-size: 1.05rem;
 }
+.contact-hero h1 {
+  font-size: clamp(3.4rem, 6vw, 5.5rem);
+}
+.contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  background: var(--pink);
+}
+.contact-summary h2 {
+  margin-bottom: 1rem;
+}
+.contact-summary > p:last-child {
+  max-width: 38ch;
+  margin: 0;
+  font-size: 1.04rem;
+}
+.contact-methods {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+.contact-methods > div {
+  border-top: 2px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  padding-top: 0.75rem;
+}
+.contact-methods dt {
+  margin-bottom: 0.3rem;
+  font: 500 0.74rem "DM Mono", monospace;
+  text-transform: uppercase;
+}
+.contact-methods dd {
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 800;
+}
+.contact-methods a {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}
+.contact-resources {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 0.35rem;
+}
 .footer {
   border-top: var(--border);
   margin-top: 3rem;
@@ -606,8 +654,12 @@ h3 {
   }
   .hero-grid,
   .case-grid,
-  .contact-cta {
+  .contact-cta,
+  .contact-card {
     grid-template-columns: 1fr;
+  }
+  .contact-resources {
+    grid-column: auto;
   }
   .hero-main {
     min-height: 390px;
