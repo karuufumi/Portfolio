@@ -578,15 +578,19 @@ h3 {
   background: var(--green);
 }
 .article {
-  width: min(calc(100% - 2rem), 780px);
+  width: min(calc(100% - 2rem), 1100px);
   margin: 3rem auto;
 }
 .article .article-meta {
   font: 500 0.7rem "DM Mono";
 }
 .article h1 {
-  font-size: clamp(2.9rem, 7vw, 5.5rem);
+  max-width: 18ch;
+  font-size: clamp(2.45rem, 5.25vw, 4.5rem);
+  line-height: 0.98;
   margin-top: 0.7rem;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 .article p {
   font-size: 1.05rem;
