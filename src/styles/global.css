@@ -92,9 +92,10 @@ h3 {
   color: var(--muted);
 }
 .site-header {
-  padding-top: 1.25rem;
-  position: relative;
-  z-index: 2;
+  position: sticky;
+  top: 0.75rem;
+  z-index: 20;
+  padding-top: 0.75rem;
 }
 .navbar {
   min-height: 66px;
