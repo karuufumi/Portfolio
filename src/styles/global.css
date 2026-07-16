@@ -1098,7 +1098,6 @@ h3 {
 }
 .recruiter-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: 780px;
 }
 
 .recruiter-grid > :nth-child(n) {
