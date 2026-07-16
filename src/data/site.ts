@@ -47,8 +47,8 @@ export const projects: Project[] = [
 ];
 
 export const notes = [
-  { slug: 'manga-brutalist-portfolio', date: 'JUL 2026', type: 'DESIGN LOG', title: 'Designing a Manga-Brutalist Portfolio', excerpt: 'Notes on building a portfolio visual system with paper, ink, and useful constraints.' },
-  { slug: 'system-projects-thesis-work', date: 'JUN 2026', type: 'THESIS LOG', title: 'Why I Prefer System Projects for Thesis Work', excerpt: 'The appeal of projects where architecture, behavior, and evaluation are all visible.' },
-  { slug: 'cloudflare-pages-notes', date: 'MAY 2026', type: 'DEPLOYMENT', title: 'Cloudflare Pages Deployment Notes', excerpt: 'A short, practical record of shipping static work with a small operational surface.' },
-  { slug: 'container-sandboxing-research', date: 'APR 2026', type: 'RESEARCH', title: 'Container Sandboxing Research Notes', excerpt: 'Questions and patterns from thinking about policy boundaries and runtime isolation.' },
+  { slug: 'manga-brutalist-portfolio', date: 'JUL 2026', title: 'Designing a Manga-Brutalist Portfolio', excerpt: 'Notes on building a portfolio visual system with paper, ink, and useful constraints.' },
+  { slug: 'system-projects-thesis-work', date: 'JUN 2026', title: 'Why I Prefer System Projects for Thesis Work', excerpt: 'The appeal of projects where architecture, behavior, and evaluation are all visible.' },
+  { slug: 'cloudflare-pages-notes', date: 'MAY 2026', title: 'Cloudflare Pages Deployment Notes', excerpt: 'A short, practical record of shipping static work with a small operational surface.' },
+  { slug: 'container-sandboxing-research', date: 'APR 2026', title: 'Container Sandboxing Research Notes', excerpt: 'Questions and patterns from thinking about policy boundaries and runtime isolation.' },
 ];

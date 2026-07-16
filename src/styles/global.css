@@ -1116,7 +1116,6 @@ h3 {
 .blog-list {
   display: grid;
   gap: 1rem;
-  max-width: 920px;
 }
 .blog-entry {
   display: grid;
