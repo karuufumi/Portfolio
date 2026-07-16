@@ -7,4 +7,5 @@ export const profile = {
   emailEncoded: 'a2hhbmd0aWVuMjRAZ21haWwuY29t',
   githubUrl: 'https://github.com/karuufumi',
   linkedinUrl: 'https://www.linkedin.com/in/tienkhangnguyen',
+  heroSummary: 'I’m a Computer Science undergraduate focused on backend and cloud systems. I build reliable APIs, delivery workflows, and security-minded tools with clear architecture and observable behavior.',
 } as const;
