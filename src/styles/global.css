@@ -1097,14 +1097,22 @@ h3 {
   max-width: 420px;
 }
 .recruiter-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   max-width: 780px;
+}
+
+.recruiter-grid > :nth-child(n) {
+  grid-column: auto;
 }
 .recruiter-grid .mini-card {
   min-height: 170px;
 }
 .recruiter-grid .mini-card strong {
   font-size: 2.1rem;
+}
+
+.availability-card {
+  background: var(--paper);
 }
 .blog-list {
   display: grid;
@@ -1282,6 +1290,14 @@ h3 {
   color: var(--muted);
   font-weight: 800;
   font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+}
+
+.hero-location {
+  margin: -0.7rem 0 0.8rem;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
 }
 .expertise-section {
   scroll-margin-top: 1rem;
