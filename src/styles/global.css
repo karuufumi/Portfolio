@@ -391,6 +391,28 @@ h3 {
     500 0.62rem "DM Mono",
     monospace;
   text-align: right;
+  white-space: nowrap;
+}
+.project-markers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  align-items: center;
+}
+.progress-marker {
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.12rem 0.35rem;
+  background: color-mix(in srgb, var(--paper) 72%, transparent);
+  font: 500 0.57rem "DM Mono", monospace;
+  white-space: nowrap;
+}
+.progress-marker.is-complete {
+  background: var(--green);
+}
+.progress-marker.is-progress {
+  background: var(--yellow);
 }
 .project-card h3 {
   margin-top: 2rem;
