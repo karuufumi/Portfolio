@@ -5,7 +5,7 @@ import BlogPagination from '../../../components/BlogPagination.astro';
 import { notes } from '../../../data/site';
 
 export function getStaticPaths() {
-  const pageSize = 6;
+  const pageSize = 5;
   const totalPages = Math.ceil(notes.length / pageSize);
 
   return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {

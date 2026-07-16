@@ -4,7 +4,7 @@ import BlogList from '../../components/BlogList.astro';
 import BlogPagination from '../../components/BlogPagination.astro';
 import { notes } from '../../data/site';
 
-const pageSize = 6;
+const pageSize = 5;
 const currentPage = 1;
 const totalPages = Math.max(1, Math.ceil(notes.length / pageSize));
 const pageNotes = notes.slice(0, pageSize);

@@ -58,4 +58,6 @@ export const notes: Note[] = [
   { slug: 'system-projects-thesis-work', date: 'JUN 2026', title: 'Why I Prefer System Projects for Thesis Work', excerpt: 'The appeal of projects where architecture, behavior, and evaluation are all visible.' },
   { slug: 'cloudflare-pages-notes', date: 'MAY 2026', title: 'Cloudflare Pages Deployment Notes', excerpt: 'A short, practical record of shipping static work with a small operational surface.' },
   { slug: 'container-sandboxing-research', date: 'APR 2026', title: 'Container Sandboxing Research Notes', excerpt: 'Questions and patterns from thinking about policy boundaries and runtime isolation.' },
+  { slug: 'reliable-background-jobs', date: 'MAR 2026', title: 'Building Reliable Background Jobs', excerpt: 'A practical checklist for retries, idempotency, observability, and failure recovery.' },
+  { slug: 'cloud-deployment-basics', date: 'FEB 2026', title: 'What I Look For in a Cloud Deployment', excerpt: 'The small set of signals and safeguards that make a deployment easier to trust.' },
 ];
