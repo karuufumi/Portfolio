@@ -563,6 +563,16 @@ h3 {
   padding: 2.25rem;
   margin-bottom: 2rem;
 }
+.case-header-markers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+.case-header-markers .progress-marker {
+  font-size: 0.68rem;
+  padding: 0.23rem 0.5rem;
+}
 .case-header h1 {
   margin: 0.85rem 0;
 }
