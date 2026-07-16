@@ -26,7 +26,7 @@ import Button from '../components/Button.astro';
         </div>
         <div>
           <dt>Email</dt>
-          <dd>khangtien24 [at] gmail [dot] com</dd>
+          <dd><a class="email-link" data-email="a2hhbmd0aWVuMjRAZ21haWwuY29t" aria-label="Email Nguyễn Tiến Khang">khangtien24 [at] gmail [dot] com</a></dd>
         </div>
       </dl>
 
@@ -38,3 +38,11 @@ import Button from '../components/Button.astro';
     </BrutalCard>
   </section>
 </BaseLayout>
+
+<script>
+  const emailLink = document.querySelector<HTMLAnchorElement>('.email-link');
+
+  if (emailLink?.dataset.email) {
+    emailLink.href = `mailto:${atob(emailLink.dataset.email)}`;
+  }
+</script>
