@@ -8,6 +8,5 @@ const links = [['/', 'Home'], ['/projects', 'Projects'], ['/notes', 'Blog'], ['/
     <div class="nav-links">
       {links.map(([href, label]) => <a href={href} class={path === href || path.startsWith(`${href}/`) ? 'active' : ''}>{label}</a>)}
     </div>
-    <a class="nav-cta" href="/contact">Start a project!</a>
   </nav>
 </header>

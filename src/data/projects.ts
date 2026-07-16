@@ -52,17 +52,4 @@ export const projects: Project[] = [
     features: ['Saga orchestration flow', 'Event-driven service boundaries', 'Compensating transaction support', 'Durable workflow state'],
     learned: 'Distributed transactions demand deliberate failure design. Treating recovery as a first-class workflow makes the architecture easier to reason about.',
   },
-  {
-    slug: 'karuu-portfolio',
-    number: '04',
-    title: 'Karuu Portfolio',
-    description: 'A manga-brutalist portfolio built with Astro, plain CSS, and Cloudflare Pages.',
-    tags: ['Astro', 'CSS', 'Design System', 'Cloudflare'],
-    status: 'LIVE BUILD',
-    progress: 'IN PROGRESS',
-    tone: 'green',
-    problem: 'A portfolio needs to express technical focus quickly without falling into a generic personal-site template. This site pairs serious systems content with an opinionated visual system.',
-    features: ['Static Astro pages', 'Reusable brutal UI components', 'Responsive CSS-only layout', 'Cloudflare Pages-ready output'],
-    learned: 'A small design system creates consistency without a heavy frontend stack. Strong constraints make a site both faster and more memorable.',
-  },
 ];

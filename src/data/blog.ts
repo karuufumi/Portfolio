@@ -15,14 +15,36 @@ export type Note = {
 
 export const notes: Note[] = [
   {
-    slug: 'manga-brutalist-portfolio',
+    slug: 'anomaly-detection-needs-context',
     date: 'JUL 2026',
-    title: 'Designing a Manga-Brutalist Portfolio',
-    excerpt: 'Notes on building a portfolio visual system with paper, ink, and useful constraints.',
+    title: 'Anomaly Detection Needs an Investigation Path',
+    excerpt: 'Why a useful alert should lead to context, not just a surprising number.',
     sections: [
-      { heading: 'The premise', paragraphs: ['A visual system is most useful when it gives a site a recognizable voice without fighting its content.'] },
-      { heading: 'Working through it', paragraphs: ['This portfolio starts with paper, ink, and a small group of loud accent colors. The strict border and shadow rules keep cards coherent while the system stays lightweight: no animation library, no component framework, and very little client-side code.'] },
-      { heading: 'Current takeaway', paragraphs: ['The goal is technical-zine energy, not decoration. Labels create hierarchy, card layouts make the work skimmable, and the visual language helps distinguish each project.'] },
+      { heading: 'The premise', paragraphs: ['An anomaly is only useful when someone can understand what changed, where it changed, and what to inspect next.'] },
+      { heading: 'Working through it', paragraphs: ['A detection rule should be connected to service context, a time window, a useful baseline, and the relevant logs or traces. Without that path, alerts become interruptions rather than evidence.'] },
+      { heading: 'Current takeaway', paragraphs: ['The value is not in flagging every deviation. It is in shortening the path from an unusual signal to a responsible next action.'] },
+    ],
+  },
+  {
+    slug: 'container-security-tradeoffs',
+    date: 'JUN 2026',
+    title: 'Container Security Is a Boundary Problem',
+    excerpt: 'How runtime policy, filesystem access, and observability change what a sandbox can prove.',
+    sections: [
+      { heading: 'The premise', paragraphs: ['A container is not automatically a safe test environment. Its isolation depends on the boundaries that are deliberately enforced.'] },
+      { heading: 'Working through it', paragraphs: ['Capabilities, mounted paths, network access, resource limits, and image provenance each answer a different risk question. Restricting one dimension while ignoring the others produces a reassuring but incomplete result.'] },
+      { heading: 'Current takeaway', paragraphs: ['Good sandboxing makes both the permitted behavior and the denied behavior observable and repeatable.'] },
+    ],
+  },
+  {
+    slug: 'tracing-across-service-boundaries',
+    date: 'MAY 2026',
+    title: 'Tracing Requests Across Service Boundaries',
+    excerpt: 'A small, practical model for following one request through an event-driven workflow.',
+    sections: [
+      { heading: 'The premise', paragraphs: ['A request rarely stays inside one service. The hard part is preserving enough context to explain its path after it becomes asynchronous.'] },
+      { heading: 'Working through it', paragraphs: ['Propagating a correlation identifier across API calls, messages, and background jobs creates a shared handle for logs, traces, and operational questions. It should be treated as part of the system contract, not an afterthought.'] },
+      { heading: 'Current takeaway', paragraphs: ['Tracing starts with consistent context propagation. Tools become far more useful once the system provides a reliable thread to follow.'] },
     ],
   },
   {
