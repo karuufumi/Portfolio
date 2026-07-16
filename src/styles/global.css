@@ -1410,8 +1410,27 @@ h3 {
   color: var(--muted);
   font-size: 0.92rem;
 }
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.credentials-grid .brutal-card {
+  min-height: 205px;
+  padding: 1.4rem;
+}
+.credentials-grid h3 {
+  margin: 1.4rem 0 0.7rem;
+  font-size: 1.45rem;
+}
+.credentials-grid p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 @media (max-width: 800px) {
-  .expertise-grid {
+  .expertise-grid,
+  .credentials-grid {
     grid-template-columns: 1fr;
   }
   .expertise-section .section-heading {
