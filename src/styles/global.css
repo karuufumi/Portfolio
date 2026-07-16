@@ -678,6 +678,21 @@ h3 {
   overflow-wrap: anywhere;
   text-wrap: balance;
 }
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0;
+  margin: 1.25rem 0 2rem;
+  list-style: none;
+}
+.article-tags li {
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  padding: 0.25rem 0.55rem;
+  font: 600 0.7rem "DM Mono", monospace;
+}
 .article p {
   font-size: 1.05rem;
 }

@@ -1,22 +1,22 @@
 ---
-import type { Note } from '../data/blog';
+import { formatPostDate, getPostSlug, type BlogPost } from '../lib/blog';
 
 interface Props {
-  notes: Note[];
+  posts: BlogPost[];
   startIndex: number;
 }
 
-const { notes, startIndex } = Astro.props;
+const { posts, startIndex } = Astro.props;
 ---
 
 <section class="section container blog-list">
-  {notes.map((note, index) => (
-    <a class="blog-entry" href={`/notes/${note.slug}`}>
+  {posts.map((post, index) => (
+    <a class="blog-entry" href={`/notes/${getPostSlug(post)}`}>
       <span class="blog-number">{String(startIndex + index + 1).padStart(2, '0')}</span>
       <div>
-        <span class="note-meta">{note.date}</span>
-        <h2>{note.title}</h2>
-        <p>{note.excerpt}</p>
+        <span class="note-meta">{formatPostDate(post.data.pubDate)}</span>
+        <h2>{post.data.title}</h2>
+        <p>{post.data.description}</p>
       </div>
       <span class="blog-arrow" aria-hidden="true">→</span>
     </a>

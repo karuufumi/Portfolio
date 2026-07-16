@@ -5,9 +5,11 @@ import Button from '../components/Button.astro';
 import MangaLabel from '../components/MangaLabel.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { credentials } from '../data/credentials';
-import { notes } from '../data/blog';
+import { formatPostDate, getPostSlug, getPublishedPosts } from '../lib/blog';
 import { profile } from '../data/profile';
 import { projects } from '../data/projects';
+
+const posts = await getPublishedPosts();
 ---
 
 <BaseLayout>
@@ -74,7 +76,7 @@ import { projects } from '../data/projects';
 
   <section class="section container">
     <div class="section-heading"><div><p class="eyebrow">FROM THE BLOG</p><h2>Blog Posts</h2></div><p>The two most recent posts on systems, cloud, research, and applied engineering work.</p></div>
-    <div class="notes-grid">{notes.slice(0, 2).map((note) => <a class="note-card" href={`/notes/${note.slug}`}><span class="note-meta">{note.date}</span><h3>{note.title}</h3><p>{note.excerpt}</p></a>)}</div>
+    <div class="notes-grid">{posts.slice(0, 2).map((post) => <a class="note-card" href={`/notes/${getPostSlug(post)}`}><span class="note-meta">{formatPostDate(post.data.pubDate)}</span><h3>{post.data.title}</h3><p>{post.data.description}</p></a>)}</div>
   </section>
 
 </BaseLayout>

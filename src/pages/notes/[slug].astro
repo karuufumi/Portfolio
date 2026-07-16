@@ -1,24 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { notes } from '../../data/blog';
+import { render } from 'astro:content';
+import { formatPostDate, getPostSlug, getPublishedPosts } from '../../lib/blog';
 
-export function getStaticPaths() {
-  return notes.map((note) => ({ params: { slug: note.slug }, props: { note } }));
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({ params: { slug: getPostSlug(post) }, props: { post } }));
 }
 
-const { note } = Astro.props;
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
 
-<BaseLayout title={`${note.title} — Karuu`}>
+<BaseLayout title={`${post.data.title} — Karuu`}>
   <article class="article">
-    <p class="article-meta">{note.date}</p>
-    <h1>{note.title}</h1>
-    <p class="eyebrow">BLOG POST / KARUU</p>
-    {note.sections.map((section) => (
-      <section>
-        <h2>{section.heading}</h2>
-        {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-      </section>
-    ))}
+    <p class="article-meta">{formatPostDate(post.data.pubDate)}</p>
+    <h1>{post.data.title}</h1>
+    <ul class="article-tags" aria-label="Post tags">{post.data.tags.map((tag) => <li>{tag}</li>)}</ul>
+    <Content />
   </article>
 </BaseLayout>

@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogList from '../../components/BlogList.astro';
 import BlogPagination from '../../components/BlogPagination.astro';
-import { BLOG_PAGE_SIZE, notes } from '../../data/blog';
+import { BLOG_PAGE_SIZE, getPublishedPosts } from '../../lib/blog';
 
 const pageSize = BLOG_PAGE_SIZE;
+const posts = await getPublishedPosts();
 const currentPage = 1;
-const totalPages = Math.max(1, Math.ceil(notes.length / pageSize));
-const pageNotes = notes.slice(0, pageSize);
+const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));
+const pagePosts = posts.slice(0, pageSize);
 ---
-<BaseLayout title="Blog — Karuu"><section class="page-hero container"><h1>Blog</h1><p>Short writing on backend systems, cloud delivery, security research, and project work.</p></section><BlogList notes={pageNotes} startIndex={0} /><BlogPagination currentPage={currentPage} totalPages={totalPages} /></BaseLayout>
+<BaseLayout title="Blog — Karuu"><section class="page-hero container"><h1>Blog</h1><p>Short writing on backend systems, cloud delivery, security research, and project work.</p></section><BlogList posts={pagePosts} startIndex={0} /><BlogPagination currentPage={currentPage} totalPages={totalPages} /></BaseLayout>
