@@ -4,7 +4,7 @@ const links = [['/', 'Home'], ['/projects', 'Projects'], ['/notes', 'Blog'], ['/
 ---
 <header class="site-header container">
   <nav class="navbar" aria-label="Main navigation">
-    <a class="logo" href="/" aria-label="Karuu home"><span aria-hidden="true">▣</span> KARUU</a>
+    <a class="logo" href="/" aria-label="Karuu home"><span aria-hidden="true">▣</span> Karuu</a>
     <div class="nav-links">
       {links.map(([href, label]) => <a href={href} class={path === href || path.startsWith(`${href}/`) ? 'active' : ''}>{label}</a>)}
     </div>
